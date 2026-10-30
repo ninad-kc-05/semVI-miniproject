@@ -6,6 +6,8 @@ import App from "./App";
 import Idea1 from "./Idea1";
 import Idea2 from "./Idea2";
 import Idea3 from "./Idea3";
+import Idea4 from "./Idea4";
+import Idea5 from "./Idea5";
 
 import "./index.css";
 
@@ -17,6 +19,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/idea-1" element={<Idea1 />} />
         <Route path="/idea-2" element={<Idea2 />} />
         <Route path="/idea-3" element={<Idea3 />} />
+        <Route path="/idea-4" element={<Idea4 />} />
+        <Route path="/idea-5" element={<Idea5 />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

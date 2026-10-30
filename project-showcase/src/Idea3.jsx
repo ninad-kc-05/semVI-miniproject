@@ -17,7 +17,7 @@ const problemPoints = [
   {
     number: "02",
     title: "Clients can be attacked",
-    text: "An attacker may download the NASK APK, decompile it, modify it, recompile it, install it, or run it inside an Android emulator.",
+    text: "An attacker may download the BOUNDCRYPT APK, decompile it, modify it, recompile it, install it, or run it inside an Android emulator.",
   },
   {
     number: "03",
@@ -68,7 +68,7 @@ const creatorSteps = [
   {
     number: "01",
     title: "Login",
-    text: "Root authenticates with NASK.",
+    text: "Root authenticates with BOUNDCRYPT.",
   },
   {
     number: "02",
@@ -78,17 +78,17 @@ const creatorSteps = [
   {
     number: "03",
     title: "Backend authorization",
-    text: "Root's Android application contacts NASK. The backend creates the Asset ID, policy, authorization state, and cryptographic setup.",
+    text: "Root's Android application contacts BOUNDCRYPT. The backend creates the Asset ID, policy, authorization state, and cryptographic setup.",
   },
   {
     number: "04",
     title: "Local encryption",
-    text: "movie.mp4 goes through the local NASK packager and becomes movie.n1n4d. The backend never needs the original movie.",
+    text: "movie.mp4 goes through the local BOUNDCRYPT packager and becomes movie.n1n4d. The backend never needs the original movie.",
   },
 ];
 
 const openingSteps = [
-  { number: "01", title: "Receive .n1n4d", text: "The file arrives from anywhere. NASK parses Asset ID, format, crypto metadata, and policy metadata." },
+  { number: "01", title: "Receive .n1n4d", text: "The file arrives from anywhere. BOUNDCRYPT parses Asset ID, format, crypto metadata, and policy metadata." },
   { number: "02", title: "Verify installation", text: "The backend verifies the installation identity." },
   { number: "03", title: "Verify integrity", text: "App and device integrity are checked." },
   { number: "04", title: "Check asset active", text: "The asset must be in a state that allows access." },
@@ -125,7 +125,7 @@ const features = [
   {
     number: "02",
     title: "Local encryption",
-    text: "The media stays on the creator's phone and is encrypted by the local NASK packager. The backend never needs the original.",
+    text: "The media stays on the creator's phone and is encrypted by the local BOUNDCRYPT packager. The backend never needs the original.",
   },
   {
     number: "03",
@@ -150,7 +150,7 @@ const features = [
   {
     number: "07",
     title: "Backend asset state",
-    text: "Each asset is ACTIVE, SUSPENDED, REVOKED, or EXPIRED. NASK only needs to know the state of the asset, wherever the file is.",
+    text: "Each asset is ACTIVE, SUSPENDED, REVOKED, or EXPIRED. BOUNDCRYPT only needs to know the state of the asset, wherever the file is.",
   },
   {
     number: "08",
@@ -242,7 +242,7 @@ const techComponents = [
     number: "01",
     title: "Cryptography",
     points: [
-      "Established primitives only. NASK does not invent its own encryption algorithm.",
+      "Established primitives only. BOUNDCRYPT does not invent its own encryption algorithm.",
       "AES-256-GCM for authenticated encryption: confidentiality, integrity, and authentication.",
       "Elliptic-curve cryptography using Android-supported primitives for asymmetric operations.",
       "SHA-256 / SHA-3 where appropriate, and Android's cryptographically secure random generator.",
@@ -423,7 +423,7 @@ const scenarios = [
   },
   {
     title: "Unexpected installation",
-    text: "If the expected tree does not match reality, NASK reports \"Unexpected installation authorized\" rather than claiming the content was stolen.",
+    text: "If the expected tree does not match reality, BOUNDCRYPT reports \"Unexpected installation authorized\" rather than claiming the content was stolen.",
   },
 ];
 
@@ -452,11 +452,11 @@ const desktopRisks = [
 const limits = [
   {
     title: "Physical capture cannot be prevented",
-    text: "A camera pointed at the screen cannot be stopped cryptographically. NASK never claims to be piracy-proof.",
+    text: "A camera pointed at the screen cannot be stopped cryptographically. BOUNDCRYPT never claims to be piracy-proof.",
   },
   {
     title: "An APK cannot be made impossible to decompile",
-    text: "The goal is that decompiling NASK does not reveal a secret that bypasses backend authorization or decrypts arbitrary .n1n4d files.",
+    text: "The goal is that decompiling BOUNDCRYPT does not reveal a secret that bypasses backend authorization or decrypts arbitrary .n1n4d files.",
   },
   {
     title: "R8 and NDK are not the root of trust",
@@ -552,7 +552,7 @@ const phases = [
   {
     number: "Phase 1",
     title: ".n1n4d prototype",
-    text: "MP4, local packager, AES-GCM chunk encryption, .n1n4d, NASK parser, local playback. No backend yet.",
+    text: "MP4, local packager, AES-GCM chunk encryption, .n1n4d, BOUNDCRYPT parser, local playback. No backend yet.",
   },
   {
     number: "Phase 2",
@@ -631,8 +631,8 @@ function Idea3() {
           <span className="idea-section-number">03</span>
           Project
         </p>
-        <h1 className="idea-hero-title">NASK</h1>
-        <p className="idea-hero-subtitle">Native Access Security Kernel</p>
+        <h1 className="idea-hero-title">BOUNDCRYPT</h1>
+        <p className="idea-hero-subtitle">Bound It. Crypt It.</p>
         <p className="idea-description idea-hero-description">
           An Android-only secure digital-media access system. Media is encrypted
           locally into a portable <code>.n1n4d</code> container, and a
@@ -678,7 +678,7 @@ function Idea3() {
           number="02"
           label="Proposed Solution"
           title="Portable encrypted object, backend-controlled access"
-          intro="NASK separates the protected content from the authority that decides who may open it."
+          intro="BOUNDCRYPT separates the protected content from the authority that decides who may open it."
         />
         <div className="idea-solution-flow">
           {solutionStages.map((stage, index) => (
@@ -711,11 +711,11 @@ function Idea3() {
           number="03"
           label="Why Android Only"
           title="An architectural decision, not an MVP limitation"
-          intro="NASK Client v1 targets Android devices only. The security model depends on controlling the client environment, while the backend can remain platform-independent."
+          intro="BOUNDCRYPT Client v1 targets Android devices only. The security model depends on controlling the client environment, while the backend can remain platform-independent."
         />
         <div className="idea-compare">
           <article className="idea-card">
-            <p className="idea-card-label">What Android lets NASK control</p>
+            <p className="idea-card-label">What Android lets BOUNDCRYPT control</p>
             <ul className="idea-list">
               {androidReasons.map((reason) => (
                 <li key={reason}>{reason}</li>
@@ -828,7 +828,7 @@ function Idea3() {
         <SectionHeader
           number="06"
           label="Core Features"
-          title="What NASK provides"
+          title="What BOUNDCRYPT provides"
         />
         <div className="idea-grid idea-feature-grid">
           {features.map((feature) => (
@@ -873,7 +873,7 @@ function Idea3() {
         />
         <div className="idea-architecture">
           <div className="idea-architecture-layer">
-            <p className="idea-card-label">NASK Backend</p>
+            <p className="idea-card-label">BOUNDCRYPT Backend</p>
             <ul className="idea-tech-grid">
               {backendServices.map((service) => (
                 <li className="idea-tech-card" key={service}>
@@ -889,7 +889,7 @@ function Idea3() {
             <p className="idea-card-label">HTTPS / Auth Protocol</p>
           </div>
           <div className="idea-architecture-layer">
-            <p className="idea-card-label">NASK Android</p>
+            <p className="idea-card-label">BOUNDCRYPT Android</p>
             <ul className="idea-tech-grid">
               {androidModules.map((module) => (
                 <li className="idea-tech-card" key={module}>
@@ -1000,7 +1000,7 @@ function Idea3() {
         <SectionHeader
           number="10"
           label="What Makes It Different"
-          title="Naive approach versus NASK"
+          title="Naive approach versus BOUNDCRYPT"
           intro="Understanding the APK's code is not equivalent to obtaining authorization."
         />
         <div className="idea-difference-list">
@@ -1013,7 +1013,7 @@ function Idea3() {
                   <p className="idea-card-text">{row.naive}</p>
                 </div>
                 <div className="idea-difference-cell">
-                  <p className="idea-card-label">NASK approach</p>
+                  <p className="idea-card-label">BOUNDCRYPT approach</p>
                   <p className="idea-card-text">{row.nask}</p>
                 </div>
                 <div className="idea-difference-cell idea-difference-gain">
@@ -1085,7 +1085,7 @@ function Idea3() {
           number="12"
           label="Attack and Defense Model"
           title="Designed to be tested against"
-          intro="NASK is evaluated against explicit attacks, and the result of each is documented."
+          intro="BOUNDCRYPT is evaluated against explicit attacks, and the result of each is documented."
         />
         <div className="idea-table-wrapper">
           <table className="idea-table">
@@ -1111,8 +1111,8 @@ function Idea3() {
         <SectionHeader
           number="13"
           label="Honest Limits"
-          title="What NASK does not claim"
-          intro="NASK controls digital authorization and protected digital access. It cannot prevent physical capture of displayed content."
+          title="What BOUNDCRYPT does not claim"
+          intro="BOUNDCRYPT controls digital authorization and protected digital access. It cannot prevent physical capture of displayed content."
         />
         <div className="idea-grid">
           {limits.map((limit) => (
@@ -1205,7 +1205,7 @@ function Idea3() {
       </section>
 
       <section className="idea-cta">
-        <p className="idea-section-label">NASK</p>
+        <p className="idea-section-label">BOUNDCRYPT</p>
         <h2 className="idea-title">Explore the complete project</h2>
         <p className="idea-description">
           A portable encrypted object, a controlled Android client, and a
